@@ -1,0 +1,43 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/petgram/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/petgram/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/petgram/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/petgram/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/petgram/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/petgram/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/petgram/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1516628185
+  }
+}

@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV.fetch('DB_HOST') %>
+
+development:
+  <<: *default
+  database: petgram_development
+
+test:
+  <<: *default
+  database: petgram_test
+
+staging:
+  <<: *default
+  database: petgram_staging
+
+production:
+  <<: *default
+  database: petgram_production
+  username: petgram
+  password: <%= ENV['PETGRAM_DATABASE_PASSWORD'] %>
