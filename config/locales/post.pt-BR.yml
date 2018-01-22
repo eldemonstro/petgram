@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+    attributes:
+      post:
+        text: Texto
+        name: Seu nome
+  helpers:
+    submit:
+      post:
+        create: 'Enviar post'

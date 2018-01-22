@@ -1,0 +1,22 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/1.17.12/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - sudo mv ./docker-compose /usr/bin/docker-compose
+  - sudo chmod +x /usr/bin/docker-compose
+  - docker pull postgres:9.6-alpine
+  - docker-compose build
+  - docker images
+
+install:
+  - echo 'Skiping because docker boys'
+
+script:
+  - docker-compose run --rm --service-ports web ping db -c 4
+  - docker-compose run --rm --service-ports web bin/setup
+  - docker-compose run --rm --service-ports web bundle exec rspec
+  - docker-compose run --rm --service-ports web bundle exec rubocop
