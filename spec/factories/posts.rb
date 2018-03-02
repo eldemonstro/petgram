@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    text 'Macaco loco'
-    name 'Bananal'
+    text 'novo texto #hashtag'
+    name 'new boys'
   end
 end

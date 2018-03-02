@@ -1,1 +1,11 @@
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <div id="post_<%= post.id %>">
+      <%= render post %>
+    </div>
+  <% end %>
+<% else %>
+  <p class="lead">Nenhum post feito!</p>
+<% end %>
+<hr>
 <%= link_to 'Criar um post', new_post_path %>
