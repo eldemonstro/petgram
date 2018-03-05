@@ -2,12 +2,13 @@ pt-BR:
   activerecord:
     models:
       post:
-        one: Post
-        other: Posts
+        one: 'Post'
+        other: 'Posts'
     attributes:
       post:
-        text: Texto
-        name: Seu nome
+        text: 'Texto'
+        name: 'Seu nome'
+        photo: 'Foto'
   helpers:
     submit:
       post:

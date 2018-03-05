@@ -5,7 +5,8 @@ RUN apt-get update -qq
 RUN apt-get install -y --no-install-recommends \
       vim \
       postgresql-client \
-      tzdata
+      tzdata \
+      imagemagick
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen

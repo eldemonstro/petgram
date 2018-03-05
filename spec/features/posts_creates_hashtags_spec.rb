@@ -8,6 +8,7 @@ feature 'hashtags' do
 
       fill_in 'Texto', with: '#newhashtag'
       fill_in 'Seu nome', with: 'Rodrigo'
+      attach_file('Foto', Rails.root.join('spec', 'fixtures', 'dog.jpg'))
       click_on 'Enviar post'
 
       expect(Hashtag.last).not_to eq nil
@@ -18,6 +19,7 @@ feature 'hashtags' do
 
       fill_in 'Texto', with: '#newhashtag #oldhashtag'
       fill_in 'Seu nome', with: 'Rodrigo'
+      attach_file('Foto', Rails.root.join('spec', 'fixtures', 'dog.jpg'))
       click_on 'Enviar post'
 
       expect(Hashtag.all.count).to eq 2
@@ -29,6 +31,7 @@ feature 'hashtags' do
       visit new_post_path
 
       fill_in 'Texto', with: '#newhashtag #oldhashtag'
+      attach_file('Foto', Rails.root.join('spec', 'fixtures', 'dog.jpg'))
       fill_in 'Seu nome', with: 'Rodrigo'
       click_on 'Enviar post'
 

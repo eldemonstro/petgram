@@ -7,6 +7,7 @@ end
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip', '~> 5.2.1'
 gem 'pg', '~> 0.18'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
@@ -17,7 +18,7 @@ gem 'unicorn'
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'i18n-js'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3'
 
 group :development, :test do
   gem 'factory_bot_rails'
