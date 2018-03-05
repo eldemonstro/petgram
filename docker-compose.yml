@@ -17,3 +17,5 @@ services:
       .env.docker
     links:
       - db
+    depends_on:
+      - db

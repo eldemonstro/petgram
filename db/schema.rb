@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122142900) do
+ActiveRecord::Schema.define(version: 20180124141844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hashtag_posts", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "hashtag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag_id"], name: "index_hashtag_posts_on_hashtag_id"
+    t.index ["post_id"], name: "index_hashtag_posts_on_post_id"
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "text"
@@ -22,4 +37,6 @@ ActiveRecord::Schema.define(version: 20180122142900) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "hashtag_posts", "hashtags"
+  add_foreign_key "hashtag_posts", "posts"
 end
